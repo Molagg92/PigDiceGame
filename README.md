@@ -10,9 +10,15 @@ Code:GenerateRoll()
 Expected Output: random integer beteween 1-6
 
 ----------------------
-Describe: function Player1Score()
+Describe: function playRound()
 Test:should store the result of GenereteRoll() inside an array.
-Code: player1Array.push(generateRoll())
+Code: scoreArray.push(num)
+Expected Output:
+
+----------------------
+
+Test:
+Code:
 Expected Output:
 
 ----------------------
