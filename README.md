@@ -16,9 +16,9 @@ Code: scoreArray.push(num)
 Expected Output:
 
 ----------------------
-
-Test:
-Code:
-Expected Output:
+describe: function sumArray(arr)
+Test:should return the sum of the numbers in our array.
+Code: sumArraey(arr){for loop, sum += [i]. return sum }
+Expected Output:[1, 2] = 3!
 
 ----------------------
