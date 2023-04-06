@@ -21,11 +21,7 @@ function playRound() {
     if (checkLastRoll() === 1) {
         clearArray(scoreArray)
         changeTurn()
-    }else if (checkLastRoll() === 0) {
-        sumArray(scoreArray)
-        changeTurn()
-        clearArray(scoreArray)
-    }
+    } 
 
     console.log(`Player One is ${Player1.turnStatus}`)
     console.log(`Player Two is ${Player2.turnStatus}`)
@@ -35,10 +31,25 @@ function playRound() {
 // Adds zero to round array when you click hold
 function holdRound() {
     scoreArray.push(0)
-    console.log((scoreArray)) 
-    console.log(checkLastRoll()) 
-    changeTurn() 
+   checkLastRoll()
+    if (checkLastRoll() === 0) {
+			player1Score += sumArray(scoreArray)
+			
+		  // clearArray()	
+			console.log(scoreArray)
+			changeTurn()
+      
+    }
+	console.log(`Player One is ${Player1.turnStatus}`)
+    console.log(`Player Two is ${Player2.turnStatus}`)
+    
+		console.log("1st Player: " + player1Score)
+
 }
+
+
+
+	
 
 // Function to check last item of score Array
 function checkLastRoll() {

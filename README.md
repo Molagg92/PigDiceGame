@@ -16,9 +16,16 @@ Code: scoreArray.push(num)
 Expected Output:
 
 ----------------------
-describe: function sumArray(arr)
+Describe: function sumArray(arr)
 Test:should return the sum of the numbers in our array.
 Code: sumArraey(arr){for loop, sum += [i]. return sum }
 Expected Output:[1, 2] = 3!
+
+----------------------
+
+Description: function holdRound() 
+Test:should push 0 onto scoreArray, wich will call  sumArray() on scoreArray, giving the active players variable the sum total
+Code: function holdROund() { ------ ------- sumArray(scoreArray)}
+Expected Output:[2, 2] holdround() reutrns 4
 
 ----------------------
