@@ -21,6 +21,7 @@ function playRound() {
     if (checkLastRoll() === 1) {
         clearArray(scoreArray)
         changeTurn()
+			console.log("Nat 1")	
     } 
 
     console.log(`Player One is ${Player1.turnStatus}`)
@@ -32,8 +33,13 @@ function playRound() {
 function holdRound() {
     scoreArray.push(0)
    checkLastRoll()
-    if (checkLastRoll() === 0) {
+    if (checkLastRoll() === 0 && Player1.turnStatus === true) {
 			player1Score += sumArray(scoreArray)
+		  clearArray(scoreArray)	
+			console.log(scoreArray)
+			changeTurn()
+    } else if (checkLastRoll() === 0 && Player2.turnStatus === true){
+			player2Score += sumArray(scoreArray)
 		  clearArray(scoreArray)	
 			console.log(scoreArray)
 			changeTurn()
@@ -41,9 +47,11 @@ function holdRound() {
 		if (player1Score >= 10) {
 			console.log("Winner Winner Chicken Dinner")
 		}
+	console.log("1st Player: " + player1Score)
+	console.log("2nd Player: " + player2Score)
 	console.log(`Player One is ${Player1.turnStatus}`)
   console.log(`Player Two is ${Player2.turnStatus}`)
-	console.log("1st Player: " + player1Score)
+	
 
 }
 

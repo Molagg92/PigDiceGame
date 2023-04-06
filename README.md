@@ -36,3 +36,9 @@ Code: holdRound() >= 100
 Expected Output: clearAray, hide loosing players img, display image displaying victory.
 
 ----------------------
+
+Test: should rewrite the function a lil bit , as to include the second player, and account for which boolean is true, and which plaayer score vaiable to add the round pool into
+Code:holdRound() [during player2's turn]
+Expected Output:player2Score working
+
+----------------------
