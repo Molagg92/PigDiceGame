@@ -42,3 +42,8 @@ Code:holdRound() [during player2's turn]
 Expected Output:player2Score working
 
 ----------------------
+
+Describe: playScoreBoards
+Test:will make html elements that will display the current score of each player
+Code:
+Expected Output:
