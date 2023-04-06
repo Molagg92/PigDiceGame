@@ -29,3 +29,10 @@ Code: function holdROund() { ------ ------- sumArray(scoreArray)}
 Expected Output:[2, 2] holdround() reutrns 4
 
 ----------------------
+
+
+Test: should write an if statemnt that checks if the sum of our total player scroe is equal too or greater than 100, wich is the winning score of the game.
+Code: holdRound() >= 100 
+Expected Output: clearAray, hide loosing players img, display image displaying victory.
+
+----------------------

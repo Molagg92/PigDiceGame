@@ -34,16 +34,16 @@ function holdRound() {
    checkLastRoll()
     if (checkLastRoll() === 0) {
 			player1Score += sumArray(scoreArray)
-			
-		  // clearArray()	
+		  clearArray(scoreArray)	
 			console.log(scoreArray)
 			changeTurn()
-      
     }
+		if (sumArray(scoreArray) >= 10) {
+			console.log("Winner Winner Chicken Dinner")
+		}
 	console.log(`Player One is ${Player1.turnStatus}`)
-    console.log(`Player Two is ${Player2.turnStatus}`)
-    
-		console.log("1st Player: " + player1Score)
+  console.log(`Player Two is ${Player2.turnStatus}`)
+	console.log("1st Player: " + player1Score)
 
 }
 
