@@ -38,7 +38,7 @@ function holdRound() {
 			console.log(scoreArray)
 			changeTurn()
     }
-		if (sumArray(scoreArray) >= 10) {
+		if (player1Score >= 10) {
 			console.log("Winner Winner Chicken Dinner")
 		}
 	console.log(`Player One is ${Player1.turnStatus}`)
