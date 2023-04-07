@@ -6,12 +6,17 @@
 let player1Score = 0
 let player2Score = 0
 let scoreArray = [] 
+let roundPool = document.getElementById("roundPool")
 
 let p1ScoreBoard = document.getElementById("player1ScoreBoard");
-
 let p2ScoreBoard = document.getElementById("player2ScoreBoard");
-p1ScoreBoard.innerText = player1Score;
-p2ScoreBoard.innerText = player2Score;
+
+let p1TurnChecker = document.getElementById("p1TurnCheck");
+let p2TurnChecker = document.getElementById("p2TurnCheck");
+
+
+let winnerPage = document.getElementById("winnerPage")
+let chickenDinner = document.getElementById("chickenDinner")
 
 // Function generates random number between 1 - 6 returns value
 function generateRoll() { 
@@ -24,11 +29,15 @@ function generateRoll() {
 function playRound() {
     scoreArray.push(generateRoll())
     checkLastRoll()
+		 
     if (checkLastRoll() === 1) {
         clearArray(scoreArray)
-        changeTurn()
+       changeTurn()
 			console.log("Nat 1")	
     } 
+		 
+		let sum = sumArray(scoreArray);
+		roundPool.innerText = " + " + sum;
 
     console.log(`Player One is ${Player1.turnStatus}`)
     console.log(`Player Two is ${Player2.turnStatus}`)
@@ -56,18 +65,19 @@ function holdRound() {
     }
 		if (player1Score >= 10) {
 			console.log("Winner Winner Chicken Dinner")
-			console.log("1st Player: " + player1Score)
+			winnerPage.innerText = "1st Player: " + player1Score;
+			chickenDinner.removeAttribute("class");
+
 		}else if (player2Score >= 10){
 			console.log("Winner Winner Chicken Dinner")
 			console.log("2nd Player: " + player2Score)
+			winnerPage.innerText = "2nd Player: " + player2Score;
+			chickenDinner.removeAttribute("class");
 		}
+		roundPool.innerText = " + " + 0
 		console.log(`Player One is ${Player1.turnStatus}`)
     console.log(`Player Two is ${Player2.turnStatus}`)
 }
-
-
-
-	
 
 // Function to check last item of score Array
 function checkLastRoll() {
@@ -94,12 +104,16 @@ function changeTurn() {
     if (Player1.getStatus() === true && Player2.getStatus() === false) {
         Player1.turnStatus = false
         Player2.turnStatus = true 
+				p1TurnChecker.innerText = ""
+				p2TurnChecker.innerText = "Roll!"
+				
     } else if (Player1.getStatus() === false && Player2.getStatus() === true) {
         Player1.turnStatus = true
         Player2.turnStatus = false
+				p1TurnChecker.innerText = "Roll!"
+				p2TurnChecker.innerText = ""
     } 
 }
-
 
 
 
@@ -117,17 +131,21 @@ class Player {
 }
 
 let Player1 = new Player(true)
-
+p1TurnChecker.innerText = "Roll!"
 let Player2 = new Player(false)
 
 
 
 // UI Logic
 
-// roll btn player1
+
+
+// roll btn 
 const rollBtn = document.getElementById("roll-btn")
 rollBtn.addEventListener("click", playRound)
 
-// hold btn player1
+// hold btn 
 const holdBtn = document.getElementById("hold-btn")
 holdBtn.addEventListener("click", holdRound)
+
+

@@ -10,26 +10,38 @@
 </head>
 <body>
 
-    <h1>Pig Dice Game</h1> 
+  <h1>Pig Dice Game</h1> 
 
-    <div id="player1">
+  <div id="player1">
         <h2>Player 1</h2>
+				<h3 id="p1TurnCheck"></h3>
         <p id="player1ScoreBoard"></p>
-    </div>
+				
+					
+				
+  </div>
 
-    <div id="round-output">
-            <button id="roll-btn">ROLL THE DICE </button>
-            <button id="hold-btn">HOLD!</button>
-    </div>
+  <div id="round-output">
+    <button id="roll-btn">ROLL THE DICE </button>
+    <button id="hold-btn">HOLD!</button>
+		<p id="roundPool"></p>
+  </div>
 
-    <br>
+  <br>
 
 
     <div id="player2">
         <h2>Player 2</h2>
+				<h3 id="p2TurnCheck"></h3>
        <p id="player2ScoreBoard"></p>
+
+
     </div>
 
+		<div id="chickenDinner"class ="hidden">
+			<h1>WINNER WINNER CHICKEN DINNER!</h1>
+			<h2 id="winnerPage"></h2>
+		</div>
     
 </body>
 </html>

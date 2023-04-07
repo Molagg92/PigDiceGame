@@ -45,5 +45,21 @@ Expected Output:player2Score working
 
 Describe: playScoreBoards
 Test:will make html elements that will display the current score of each player
+Code:let p1ScoreBoard = document.getElementById("player1ScoreBoard");
+Expected Output: the players score on the screen
+
+----------------------------
+
+Describe: function playerDicePool() {}
+Test:a function that return the array to <p> in the current players scoreboard, to kepe trrack of your dice pool
 Code:
 Expected Output:
+
+----------------------
+
+Describe: function turnChecker(){}
+Test:should display a marker next to Player label to indicate if its player 1 or player 2s turn
+Code:
+Expected Output:
+
+----------------------
